@@ -1,4 +1,4 @@
-# pybitrix24
+# pybitrix24 auto auth. with selenium
 The simplest zero dependency polyversion Python library for Bitrix24 REST API.
 
 ## Features
@@ -41,7 +41,13 @@ However, to make life a bit simpler there is a helper method that builds an auth
 Finally, when an authorization code is received both [access](https://tools.ietf.org/html/rfc6749#section-1.4) and [refresh tokens](https://tools.ietf.org/html/rfc6749#section-1.5) can be obtained: 
 
 ```python
->>> bx24.obtain_tokens('AnAuthorizationCode')
+>>> from pybitrix24 import BitrixAuthorization
+>>> auth = BitrixAuthorization(url,mail,password)
+>>> auth.code
+30672d5f004b0f770000f08c0000002a000003e778a0efacc4679598c7f968289f023d
+
+```python
+>>> bx24.obtain_tokens(auth.code)
 {'access_token': 'AnAccessToken', 'refresh_token': 'ARefreshToken', ...}
 ```
 
