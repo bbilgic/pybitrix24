@@ -45,6 +45,7 @@ Finally, when an authorization code is received both [access](https://tools.ietf
 >>> auth = BitrixAuthorization(url,mail,password)
 >>> auth.code
 30672d5f004b0f770000f08c0000002a000003e778a0efacc4679598c7f968289f023d
+'''
 
 ```python
 >>> bx24.obtain_tokens(auth.code)
